@@ -1,7 +1,7 @@
 {
-	"name": "Download table as CSV",
-	"description": "Download HTML tables in MS Excel style CSV format.",
-	"version": "1.2",
+	"name": "Transações do Nubank para CSV",
+	"description": "Faça download do seu histórico do Nubank em CSV.",
+	"version": "1.0",
 	"manifest_version": 2,
 	"permissions": ["contextMenus"],
 	"background": {

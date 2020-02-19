@@ -1,10 +1,15 @@
 chrome.runtime.onInstalled.addListener(function() {
-	chrome.contextMenus.create({ id: "DLCSV", title: "Download table as CSV", type: "normal", contexts: ["page"] });
+  chrome.contextMenus.create({
+    id: "NuCSV",
+    title: "Baixar histórico em CSV",
+    type: "normal",
+    contexts: ["page"]
+  });
 });
 
 chrome.contextMenus.onClicked.addListener(function(item, tab) {
-		"use strict";
-		if(item.menuItemId == "DLCSV"){
-			chrome.tabs.sendMessage(tab.id, "downloadTableAsCSV");
-		}
+  "use strict";
+  if (item.menuItemId == "NuCSV") {
+    chrome.tabs.sendMessage(tab.id, "downloadNubankHistory");
+  }
 });
