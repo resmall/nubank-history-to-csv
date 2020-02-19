@@ -22,6 +22,7 @@
       };
 
       const csv = [];
+      csv.push(['category', 'name', 'amount', 'tags', 'day', 'month']);
 
       for (let i = 0; i < all.length; i++) {
         if (all[i].children.length === 6) {
@@ -29,9 +30,10 @@
             let transaction = {
               category: all[i].children[Fields.CATEGORY].innerText,
               name: all[i].children[Fields.NAME].innerText,
-              amount: all[i].children[Fields.AMOUNT].innerText.replace('.', '').replace(',', '.'),
+              amount: all[i].children[Fields.AMOUNT].innerText.replace('.', '').replace(',', '.').replace('R$ ', ''),
               tags: all[i].children[Fields.TAGS].innerText,
-              time: all[i].children[Fields.TIME].innerText
+              day: all[i].children[Fields.TIME].innerText.split(' ')[0],
+              month: all[i].children[Fields.TIME].innerText.split(' ')[1]
             };
             csv.push(Object.values(transaction));
           } catch (e) {
