@@ -1,8 +1,9 @@
-# table-csv-chrome
-Chrome extension that allows HTML tables to be downloaded as CSVs (now on firefox too)
+# Nubank History para CSV 
 
-https://arktiv.site/extensions/
+Extensão do Chrome baseada na extensão Table CSV Chrome.
 
-https://chrome.google.com/webstore/detail/download-table-as-csv/jgeonblahchgiadgojdjilffklaihalj
+Com essa extensão é possível gerar um CSV com as transações apresentadas na aba histórico do site da Nubank. Extensão totalmente segura, apenas baixa para CSV os dados já carregados na página.
 
-https://addons.mozilla.org/en-US/firefox/addon/download-table-as-csv/
+# Créditos
+
+Extensão adaptada de https://github.com/arktiv/table-csv-chrome
