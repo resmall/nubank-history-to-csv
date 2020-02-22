@@ -22,18 +22,22 @@
       };
 
       const csv = [];
-      csv.push(['category', 'name', 'amount', 'tags', 'day', 'month']);
+      csv.push(['Categoria', 'Nome', 'Valor', 'Tags', 'Dia', 'Mes']);
 
       for (let i = 0; i < all.length; i++) {
         if (all[i].children.length === 6) {
+          const elements = all[i].children;
+          let tags = Array.from(elements[Fields.TAGS].children);
+          tags = tags.length ? tags.map((v) => v.innerText).join(';') : '';
+          
           try {
             let transaction = {
-              category: all[i].children[Fields.CATEGORY].innerText,
-              name: all[i].children[Fields.NAME].innerText,
-              amount: all[i].children[Fields.AMOUNT].innerText.replace('.', '').replace(',', '.').replace('R$ ', ''),
-              tags: all[i].children[Fields.TAGS].innerText,
-              day: all[i].children[Fields.TIME].innerText.split(' ')[0],
-              month: all[i].children[Fields.TIME].innerText.split(' ')[1]
+              category: elements[Fields.CATEGORY].innerText,
+              name: elements[Fields.NAME].innerText,
+              amount: elements[Fields.AMOUNT].innerText.replace('.', '').replace(',', '.').replace('R$ ', ''),
+              tags,
+              day: elements[Fields.TIME].innerText.split(' ')[0],
+              month: elements[Fields.TIME].innerText.split(' ')[1]
             };
             csv.push(Object.values(transaction));
           } catch (e) {

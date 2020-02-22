@@ -9,7 +9,7 @@
 		"persistent": false
 	},
 	"content_scripts": [{
-		"js": ["downloadcsv.js"],
+		"js": ["nucsv.js"],
 		"matches": ["https://*/*", "http://*/*"],	
 		"all_frames": true
 	}],
